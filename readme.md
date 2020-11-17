@@ -10,13 +10,13 @@ Run the following command from you terminal:
 
 
  ```bash
- composer require "douglasresendemaciel/fcm-laravel-notification:@dev"
+ composer require mtgofa/fcm-laravel-notification
  ```
 
 or add this to require section in your composer.json file:
 
  ```
- "douglasresendemaciel/fcm-laravel-notification"
+ "mtgofa/fcm-laravel-notification"
  ```
 
 then run ```composer update```
@@ -27,7 +27,7 @@ Open up config/app.php and add the following to the providers key.
 ```php
 'providers' => [
 ...
-DouglasResende\FCM\NotificationServiceProvider::class
+MTGofa\FCM\NotificationServiceProvider::class
 ...
 ```
 
@@ -46,7 +46,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use DouglasResende\FCM\Messages\FirebaseMessage;
+use MTGofa\FCM\Messages\FirebaseMessage;
 
 class MyNotification extends Notification
 {

@@ -1,14 +1,13 @@
 <?php
 
-namespace DouglasResende\FCM\Channels;
+namespace MTGofa\FCM\Channels;
 
 use Illuminate\Contracts\Config\Repository as Config;
-use GuzzleHttp\Client;
 use Illuminate\Notifications\Notification;
 
 /**
  * Class FirebaseChannel
- * @package DouglasResende\FCM\Channels
+ * @package MTGofa\FCM\Channels
  */
 class FirebaseChannel
 {
@@ -56,13 +55,17 @@ class FirebaseChannel
             $apiKey = $this->getApiKey();
         }
 
-        $this->client->post(FirebaseChannel::API_URI, [
-            'headers' => [
-                'Authorization' => 'key=' . $apiKey,
-                'Content-Type' => 'application/json',
-            ],
-            'body' => $message->serialize(),
-        ]);
+        $ch = curl_init ();
+        curl_setopt ($ch, CURLOPT_URL, FirebaseChannel::API_URI);
+        curl_setopt ($ch, CURLOPT_POST, true);
+        curl_setopt ($ch, CURLOPT_HTTPHEADER, array (
+            'Authorization' => 'key=' . $apiKey,
+            'Content-Type' => 'application/json',
+        ));
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt ($ch, CURLOPT_POSTFIELDS, $message->serialize());
+        curl_exec ($ch);
+        curl_close ($ch);
     }
 
     /**

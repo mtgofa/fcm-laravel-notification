@@ -1,10 +1,10 @@
 <?php
 
-namespace DouglasResende\FCM\Messages;
+namespace MTGofa\FCM\Messages;
 
 /**
  * Class FirebaseMessage
- * @package DouglasResende\FCM\Messages
+ * @package MTGofa\FCM\Messages
  */
 class FirebaseMessage
 {

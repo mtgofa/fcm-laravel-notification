@@ -1,8 +1,12 @@
 {
-  "name": "douglasresendemaciel/fcm-laravel-notification",
+  "name": "mtgofa/fcm-laravel-notification",
   "description": "Driver to connect laravel´s notification system to Google Firebase Cloud Messaging",
   "license": "MIT",
   "authors": [
+    {
+      "name": "Mohamed Tarek Gofa",
+      "email": "gofa_25@hotmail.com"
+    },
     {
       "name": "Douglas Resende Maciel",
       "email": "eu@douglasresende.com"
@@ -10,14 +14,13 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "guzzlehttp/guzzle": "^6.2",
     "illuminate/support": "^5.3",
     "illuminate/notifications": "^5.3",
     "illuminate/contracts": "^5.3"
   },
   "autoload": {
     "psr-4": {
-      "DouglasResende\\FCM\\": "src"
+      "MTGofa\\FCM\\": "src"
     }
   }
 }

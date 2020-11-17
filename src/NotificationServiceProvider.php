@@ -1,14 +1,14 @@
 <?php
 
-namespace DouglasResende\FCM;
+namespace MTGofa\FCM;
 
-use DouglasResende\FCM\Channels\FirebaseChannel;
+use MTGofa\FCM\Channels\FirebaseChannel;
 use Illuminate\Notifications\ChannelManager;
 use Illuminate\Support\ServiceProvider;
 
 /**
  * Class NotificationServiceProvider
- * @package DouglasResende\FCM
+ * @package MTGofa\FCM
  */
 class NotificationServiceProvider extends ServiceProvider
 {
